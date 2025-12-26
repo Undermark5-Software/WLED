@@ -242,6 +242,10 @@
 #include "../usermods/LD2410_v2/usermod_ld2410.h"
 #endif
 
+#ifdef USERMOD_MIRROR_CHASE
+#include "../usermods/mirror_chase/usermod_mirror_chase.h"
+#endif
+
 void registerUsermods()
 {
 /*
@@ -469,5 +473,9 @@ void registerUsermods()
 
   #ifdef USERMOD_POV_DISPLAY
   UsermodManager::add(new PovDisplayUsermod());
+  #endif
+
+  #ifdef USERMOD_MIRROR_CHASE
+  UsermodManager::add(new UsermodMirrorChase());
   #endif
 }
